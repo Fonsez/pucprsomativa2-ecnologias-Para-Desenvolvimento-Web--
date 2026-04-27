@@ -28,7 +28,7 @@ export default function Cadastro() {
     setMensagem('')
 
     if (!firebaseConfigurado) {
-      setMensagem('Configure as variaveis do Firebase no arquivo .env para cadastrar.')
+      setMensagem('Configure as variáveis do Firebase no arquivo .env para cadastrar.')
       return
     }
 
@@ -55,11 +55,11 @@ export default function Cadastro() {
       navigate('/principal')
     } catch (erro) {
       if (erro.code === 'auth/email-already-in-use') {
-        setMensagem('Este e-mail ja esta cadastrado.')
+        setMensagem('Este e-mail já está cadastrado.')
       } else if (erro.code === 'auth/weak-password') {
         setMensagem('A senha precisa ter pelo menos 6 caracteres.')
       } else {
-        setMensagem('Nao foi possivel concluir o cadastro. Confira os dados.')
+        setMensagem('Não foi possível concluir o cadastro. Confira os dados.')
       }
     } finally {
       setCarregando(false)
@@ -71,7 +71,7 @@ export default function Cadastro() {
       <section className="panel">
         <div className="page-header">
           <p className="eyebrow">PUCPR - Desenvolvimento Web</p>
-          <h1>Cadastro de usuario</h1>
+          <h1>Cadastro de usuário</h1>
           <p>Crie uma conta usando e-mail e senha.</p>
         </div>
 
@@ -95,7 +95,7 @@ export default function Cadastro() {
               type="password"
               value={formulario.senha}
               onChange={atualizarCampo}
-              placeholder="Minimo 6 caracteres"
+              placeholder="Mínimo 6 caracteres"
               minLength="6"
               required
             />
@@ -144,7 +144,7 @@ export default function Cadastro() {
         </form>
 
         <p className="footer-text">
-          Ja possui conta? <Link to="/login">Entrar</Link>
+          Já possui conta? <Link to="/login">Entrar</Link>
         </p>
       </section>
     </main>

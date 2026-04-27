@@ -15,7 +15,7 @@ export default function Login() {
     setMensagem('')
 
     if (!firebaseConfigurado) {
-      setMensagem('Configure as variaveis do Firebase no arquivo .env para acessar.')
+      setMensagem('Configure as variáveis do Firebase no arquivo .env para acessar.')
       return
     }
 
@@ -25,7 +25,7 @@ export default function Login() {
       await signInWithEmailAndPassword(auth, email, senha)
       navigate('/principal')
     } catch {
-      setMensagem('Usuario nao cadastrado ou dados incorretos.')
+      setMensagem('Usuário não cadastrado ou dados incorretos.')
     } finally {
       setCarregando(false)
     }
@@ -66,12 +66,12 @@ export default function Login() {
           {mensagem && <p className="message error">{mensagem}</p>}
 
           <button type="submit" disabled={carregando}>
-            {carregando ? 'Acessando...' : 'Acessar pagina principal'}
+            {carregando ? 'Acessando...' : 'Acessar página principal'}
           </button>
         </form>
 
         <p className="footer-text">
-          Ainda nao possui conta? <Link to="/cadastro">Criar cadastro</Link>
+          Ainda não possui conta? <Link to="/cadastro">Criar cadastro</Link>
         </p>
       </section>
     </main>

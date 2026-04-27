@@ -12,7 +12,7 @@ export default function Principal() {
 
   useEffect(() => {
     if (!firebaseConfigurado) {
-      setMensagem('Configure as variaveis do Firebase no arquivo .env para carregar os dados.')
+      setMensagem('Configure as variáveis do Firebase no arquivo .env para carregar os dados.')
       setCarregando(false)
       return undefined
     }
@@ -33,7 +33,7 @@ export default function Principal() {
           setMensagem('Cadastro encontrado no Auth, mas sem dados no Firestore.')
         }
       } catch {
-        setMensagem('Nao foi possivel carregar os dados do usuario.')
+        setMensagem('Não foi possível carregar os dados do usuário.')
       } finally {
         setCarregando(false)
       }
@@ -53,7 +53,7 @@ export default function Principal() {
   }
 
   function formatarData(data) {
-    if (!data) return 'Nao informada'
+    if (!data) return 'Não informada'
 
     return new Intl.DateTimeFormat('pt-BR', {
       timeZone: 'UTC',
@@ -64,9 +64,9 @@ export default function Principal() {
     <main className="page">
       <section className="panel">
         <div className="page-header">
-          <p className="eyebrow">Area principal</p>
-          <h1>Dados do usuario</h1>
-          <p>Informacoes carregadas do Firestore apos o login.</p>
+          <p className="eyebrow">Área principal</p>
+          <h1>Dados do usuário</h1>
+          <p>Informações carregadas do Firestore após o login.</p>
         </div>
 
         {carregando && <p className="message">Carregando dados...</p>}
